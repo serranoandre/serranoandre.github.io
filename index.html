@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="it">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,63 +8,193 @@
   <meta name="description" content="Portfolio di Andrea Serrano — progetti, link GitHub e contatti." />
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
+  <div id="lightbox">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Immagine ingrandita">
+  </div>
+
+
   <div class="container">
     <header>
-      <h1>Andrea Serrano</h1>
-      <p>Sviluppatore & Appassionato di Progetti Web e AI</p>
-      <nav>
+      <div class="brand">
+        <div class="avatar">AS</div>
+        <div>
+          <h1>Andrea Serrano</h1>
+          <p class="lead">Sowftare developer — portfolio di progetti universitari e personali</p>
+        </div>
+      </div>
+      <nav class="topbar">
         <a href="#projects">Progetti</a>
         <a href="#about">About</a>
         <a href="https://github.com/serranoandre" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </header>
 
-    <section class="hero" aria-label="intro">
-      <p class="muted">Benvenuto nel mio portfolio! Qui puoi scoprire i miei progetti recenti e contattarmi.</p>
-    </section>
-
-    <section id="projects">
-      <h2 style="color:var(--accent);margin-top:30px;text-align:center">Progetti in evidenza</h2>
+    <section class="hero card" aria-label="intro">
+      <p class="muted">Ciao! — qui raccolgo i miei progetti, brevi descrizioni e link utili.</p>
       <div class="grid">
-        <div class="card">
-          <h3 class="project-title">Progetto A — Sistema TTS</h3>
-          <p class="muted">Script Python con Docker che utilizza modelli TTS. Demo e istruzioni nel repo.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">TTS</span></div>
-          <a class="cta" href="https://github.com/serranoandre/progetto-a" target="_blank" rel="noopener">Vai al repository</a>
+        <div>
+          <h3 style="margin-top:12px">In evidenza</h3>
+          <div class="card" style="margin-top:10px">
+            <h4 class="project-title">A.R.I.S. — Sistema TTS</h4>
+            <p class="muted">"Advanced Reasoning & Interaction System" è un modello TTS quantizzato offline per
+              pronunciare una frase con voce naturale.
+              Demo, istruzioni e maggiori info nel repo.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">TTS</span>
+            </div>
+            <a class="cta" href="https://github.com/serranoandre/progetto-a" target="_blank" rel="noopener">Vai al
+              repository</a>
+          </div>
         </div>
 
-        <div class="card">
-          <h3 class="project-title">Progetto B — Web App</h3>
-          <p class="muted">Applicazione web interattiva con Flask e API esterne per visualizzare dati dinamici.</p>
-          <div class="tags"><span class="tag">Flask</span><span class="tag">API</span></div>
-          <a class="cta" href="https://github.com/serranoandre/progetto-b" target="_blank" rel="noopener">Vai al repository</a>
-        </div>
-
-        <div class="card">
-          <h3 class="project-title">Progetto C — AI Demo</h3>
-          <p class="muted">Esperimenti con modelli ML per elaborazione testo e generazione automatica di contenuti.</p>
-          <div class="tags"><span class="tag">ML</span><span class="tag">Python</span></div>
-          <a class="cta" href="https://github.com/serranoandre/progetto-c" target="_blank" rel="noopener">Vai al repository</a>
+        <div>
+          <h3 style="margin-top:12px">Contatti</h3>
+          <div class="card" style="margin-top:10px">
+            <p class="muted">Preferisci GitHub per vedere codice. Puoi anche scrivermi via email o collegarti su
+              LinkedIn.</p>
+            <p style="margin:8px 0 0"><strong>Email:</strong> <a
+                href="mailto:tuo.email@example.com">tuo.email@example.com</a></p>
+            <p style="margin:6px 0 0"><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/tuonome</a></p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="about" style="margin-top:40px">
-      <h2 style="color:var(--accent);text-align:center">Chi sono</h2>
-      <div class="card" style="margin-top:20px">
-        <p class="muted">Ciao! Sono Andrea, laureato in Informatica. Qui condivido i miei progetti open-source, esperimenti e demo personali. Il sito è statico, puoi esplorare i repository direttamente su GitHub.</p>
-      </div>
-    </section>
 
-    <footer>
-      <p>© <span id="year"></span> Andrea Serrano — <a href="https://github.com/serranoandre" target="_blank" rel="noopener">github.com/serranoandre</a></p>
-    </footer>
+    <h2>Altri progetti</h2>
+    <div class="grid" style="margin-top:10px">
+      <article class="card fullwidth-card">
+        <h3 class="project-title">CardMaster - Progetto Agile Development</h3>
+        <p class="muted">
+          Web app per gestire, cercare e scambiare carte da gioco, con funzionalità di gestione collezioni, deck e
+          desideri, sviluppata con GWT, Maven e testata con JUnit.
+        </p>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">CSS</span>
+          <span class="tag">HTML</span>
+          <span class="tag">Maven</span>
+          <span class="tag">GWT</span>
+          <span class="tag">JUnit</span>
+          <span class="tag">Agile</span>
+        </div>
+
+        <!-- Carosello sotto i tag -->
+        <div class="carousel-wrapper">
+          <button id="prev" class="carousel-btn">&lt;</button>
+
+          <div class="carousel-window"> <!-- Finestra visibile -->
+            <div class="carousel"> <!-- Tutte le immagini -->
+              <img src="res/img/cardmaster/0.jpg" alt="CardMaster Screenshot 0" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/1.jpg" alt="CardMaster Screenshot 1" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/2.jpg" alt="CardMaster Screenshot 2" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/3.jpg" alt="CardMaster Screenshot 3" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/4.jpg" alt="CardMaster Screenshot 4" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/5.jpg" alt="CardMaster Screenshot 5" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/6.jpg" alt="CardMaster Screenshot 6" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/7.jpg" alt="CardMaster Screenshot 7" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/8.jpg" alt="CardMaster Screenshot 8" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/9.jpg" alt="CardMaster Screenshot 9" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/10.jpg" alt="CardMaster Screenshot 10" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/11.jpg" alt="CardMaster Screenshot 11" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/12.jpg" alt="CardMaster Screenshot 12" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/13.jpg" alt="CardMaster Screenshot 13" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/14.jpg" alt="CardMaster Screenshot 14" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/15.jpg" alt="CardMaster Screenshot 15" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/16.jpg" alt="CardMaster Screenshot 16" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/17.jpg" alt="CardMaster Screenshot 18" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/18.jpg" alt="CardMaster Screenshot 19" class="carousel-thumb"
+                onclick="showImage(this)">
+              <img src="res/img/cardmaster/19.jpg" alt="CardMaster Screenshot 20" class="carousel-thumb"
+                onclick="showImage(this)">
+            </div>
+          </div>
+
+          <button id="next" class="carousel-btn">&gt;</button>
+        </div>
+
+        <a class="cta" href="https://github.com/serranoandre/CardMaster_progettoSWENG" target="_blank"
+          rel="noopener">Repo</a>
+      </article>
+
+    </div>
+    </article>
+
+    <!-- Lightbox per ingrandire le immagini -->
+    <div id="lightbox" onclick="this.style.display='none'">
+      <img id="lightbox-img" src="" alt="Immagine ingrandita">
+    </div>
+    <article class="card">
+      <div class="project-img" style="background-image: url('img/asnwerhub.png');"></div>
+      <h3 class="project-title">AnswerHUB - Progetto Database</h3>
+      <p class="muted">Web app ispirata a Google Form di cui ho
+        sviluppato sia back-end (progettazione e realizzazione del database) che front-end (realizzazione del sito
+        web).</p>
+      <div class="tags">
+        <span class="tag">PHP</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">CSS</span>
+      </div>
+      <a class="cta" href="https://github.com/serranoandre/AnswerHUB_progettoDB" target="_blank" rel="noopener">Repo</a>
+    </article>
+
+    <article class="card">
+      <h3 class="project-title">CardMaster - Progetto Agile Development</h3>
+      <p class="muted">Web app per gestire, cercare e scambiare carte da gioco, con funzionalità di gestione
+        collezioni, deck e desideri, sviluppata con GWT, Maven e testata con JUnit.</p>
+      <div class="tags">
+        <span class="tag">Java</span>
+        <span class="tag">CSS</span>
+        <span class="tag">HTML</span>
+        <span class="tag">Maven</span>
+        <span class="tag">GWT</span>
+        <span class="tag">JUnit</span>
+        <span class="tag">Agile</span>
+      </div>
+      <a class="cta" href="https://github.com/serranoandre/CardMaster_progettoSWENG" target="_blank"
+        rel="noopener">Repo</a>
+    </article>
+  </div>
+  </section>
+
+  <section id="about" style="margin-top:18px">
+    <h2>About</h2>
+    <div class="card" style="margin-top:10px">
+      <p class="muted">Sono Andrea, laureato in Informatica. Qui trovi i miei progetti open-source, esperimenti e
+        piccoli demo. Il sito è statico: modifica <code>index.html</code> e push per aggiornare.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Andrea Serrano — <a href="https://github.com/serranoandre" target="_blank"
+        rel="noopener">github.com/serranoandre</a></p>
+  </footer>
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
+
 </html>
