@@ -274,8 +274,9 @@ footer {
   justify-content: center;
   align-items: center;
   z-index: 999;
-  opacity: 0;
+  opacity: 0;flex-direction: column;
   transition: opacity 0.3s ease;
+  flex-direction: column;
 }
 
 #lightbox.show {
@@ -294,7 +295,7 @@ footer {
   max-width: 80%;
   max-height: 70vh;
   border-radius: 8px;
-  margin-bottom: 12px; /* spazio sopra miniature */
+  margin-bottom: 40px; /* spazio sopra miniature */
   transform: scale(0.8);
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0;
@@ -356,8 +357,8 @@ footer {
 }
 
 .lightbox-thumbnails img {
-  width: 60px;
-  height: 40px;
+  width: 100px;
+  height: 60px;
   object-fit: cover;
   cursor: pointer;
   border: 2px solid transparent;

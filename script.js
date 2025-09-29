@@ -11,7 +11,9 @@ const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn = document.getElementById('lightbox-close');
 const nextBtnLightbox = document.getElementById('lightbox-next');
 const prevBtnLightbox = document.getElementById('lightbox-prev');
-const thumbnailsContainer = document.getElementById('lightbox-thumbnails');
+const thumbnailsContainer = document.createElement('div');
+thumbnailsContainer.className = 'lightbox-thumbnails';
+lightbox.appendChild(thumbnailsContainer);
 
 let currentImages = [];  // immagini del carousel corrente
 let currentIndex = 0;
@@ -29,33 +31,29 @@ function showImage(img) {
   currentIndex = currentImages.indexOf(img);
 
   // Popola miniature
-  populateThumbnails();
+  thumbnailsContainer.innerHTML = '';
+  currentImages.forEach((thumb, i) => {
+    const thumbImg = document.createElement('img');
+    thumbImg.src = thumb.src;
+    if (i === currentIndex) thumbImg.classList.add('active');
+    thumbImg.addEventListener('click', () => {
+      currentIndex = i;
+      updateLightboxImage();
+    });
+    thumbnailsContainer.appendChild(thumbImg);
+  });
 
   requestAnimationFrame(() => {
     lightbox.classList.add('show');
   });
 }
 
-// Popola le miniature sotto l'immagine
-function populateThumbnails() {
-  thumbnailsContainer.innerHTML = '';
-  currentImages.forEach((img, idx) => {
-    const thumb = document.createElement('img');
-    thumb.src = img.src;
-    thumb.classList.toggle('active', idx === currentIndex);
-    thumb.addEventListener('click', () => {
-      currentIndex = idx;
-      updateLightboxImage();
-    });
-    thumbnailsContainer.appendChild(thumb);
-  });
-}
-
-// Aggiorna immagine principale e evidenzia miniatura
+// Aggiorna immagine principale e miniature attiva
 function updateLightboxImage() {
   lightboxImg.src = currentImages[currentIndex].src;
-  const thumbs = thumbnailsContainer.querySelectorAll('img');
-  thumbs.forEach((t, i) => t.classList.toggle('active', i === currentIndex));
+  Array.from(thumbnailsContainer.children).forEach((thumb, i) => {
+    thumb.classList.toggle('active', i === currentIndex);
+  });
 }
 
 // Navigazione lightbox
@@ -75,13 +73,14 @@ function closeLightbox() {
   setTimeout(() => lightbox.style.display = 'none', 300);
 }
 
-// Event listener lightbox
+// Event listener
 closeBtn.addEventListener('click', closeLightbox);
 nextBtnLightbox.addEventListener('click', showNext);
 prevBtnLightbox.addEventListener('click', showPrev);
 
-lightbox.addEventListener('click', function(e) {
-  if (!['lightbox-img','lightbox-close','lightbox-prev','lightbox-next','lightbox-thumbnails'].includes(e.target.id)) {
+// Chiudi lightbox con Esc
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
     closeLightbox();
   }
 });
