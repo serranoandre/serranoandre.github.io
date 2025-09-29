@@ -12,12 +12,6 @@
 </head>
 
 <body>
-  <div id="lightbox">
-    <span id="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="Immagine ingrandita">
-  </div>
-
-
   <div class="container">
     <header>
       <div class="brand">
@@ -247,9 +241,15 @@
     <div id="lightbox">
       <span id="lightbox-close">&times;</span>
       <span id="lightbox-prev" class="lightbox-arrow">&#10094;</span>
-      <img id="lightbox-img" src="" alt="Immagine ingrandita">
+
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Immagine ingrandita">
+        <div id="lightbox-thumbnails" class="lightbox-thumbnails"></div>
+      </div>
+
       <span id="lightbox-next" class="lightbox-arrow">&#10095;</span>
     </div>
+
 
 
     <section id="about" style="margin-top:18px">

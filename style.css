@@ -283,16 +283,24 @@ footer {
   opacity: 1;
 }
 
-#lightbox img {
+.lightbox-content {
+  display: flex;
+  flex-direction: column; /* miniature sotto immagine */
+  align-items: center;
   max-width: 90%;
-  max-height: 90%;
+}
+
+#lightbox-img {
+  max-width: 80%;
+  max-height: 70vh;
   border-radius: 8px;
+  margin-bottom: 12px; /* spazio sopra miniature */
   transform: scale(0.8);
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0;
 }
 
-#lightbox.show img {
+#lightbox.show #lightbox-img {
   transform: scale(1);
   opacity: 1;
 }
@@ -313,6 +321,7 @@ footer {
   color: var(--accent-alt);
 }
 
+/* Frecce ai lati */
 .lightbox-arrow {
   position: absolute;
   top: 50%;
@@ -337,3 +346,30 @@ footer {
 .lightbox-arrow:hover {
   color: var(--accent-alt);
 }
+
+/* Miniature sotto l'immagine principale */
+.lightbox-thumbnails {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.lightbox-thumbnails img {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.lightbox-thumbnails img:hover {
+  transform: scale(1.05);
+}
+
+.lightbox-thumbnails img.active {
+  border-color: var(--accent);
+}
+
