@@ -60,3 +60,38 @@ prevBtn.onclick = () => {
 
 updateCarousel();
 
+// Trova indice dell'immagine attiva
+let currentIndex = 0;
+
+function showImage(img) {
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = img.src;
+  lightbox.style.display = 'flex';
+  currentIndex = Array.from(images).indexOf(img);
+  requestAnimationFrame(() => {
+    lightbox.classList.add('show');
+  });
+}
+
+// Funzioni per navigare
+function showNext() {
+  currentIndex = (currentIndex + 1) % images.length;
+  document.getElementById('lightbox-img').src = images[currentIndex].src;
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  document.getElementById('lightbox-img').src = images[currentIndex].src;
+}
+
+// Event listeners frecce
+document.getElementById('lightbox-next').addEventListener('click', showNext);
+document.getElementById('lightbox-prev').addEventListener('click', showPrev);
+
+// Chiudi cliccando fuori o sulla X
+lightbox.addEventListener('click', function(e) {
+  if (e.target.id !== 'lightbox-img' && e.target.id !== 'lightbox-close' &&
+      e.target.id !== 'lightbox-prev' && e.target.id !== 'lightbox-next') {
+    closeLightbox();
+  }
+});

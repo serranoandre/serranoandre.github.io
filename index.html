@@ -24,7 +24,7 @@
         <div class="avatar">AS</div>
         <div>
           <h1>Andrea Serrano</h1>
-          <p class="lead">Sowftare developer — portfolio di progetti universitari e personali</p>
+          <p class="lead">Sowftare engineer — portfolio di progetti universitari e personali</p>
         </div>
       </div>
       <nav class="topbar">
@@ -54,11 +54,12 @@
         <div>
           <h3 style="margin-top:12px">Contatti</h3>
           <div class="card" style="margin-top:10px">
-            <p class="muted">Preferisci GitHub per vedere codice. Puoi anche scrivermi via email o collegarti su
-              LinkedIn.</p>
+            <p class="muted">Guarda il mio GitHub per vedere il codice. Puoi anche scrivermi via email o collegarti su
+              LinkedIn!</p>
             <p style="margin:8px 0 0"><strong>Email:</strong> <a
-                href="mailto:tuo.email@example.com">tuo.email@example.com</a></p>
-            <p style="margin:6px 0 0"><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/tuonome</a></p>
+                href="mailto:serranoand@libero.it">serranoand@libero.it</a></p>
+            <p style="margin:6px 0 0"><strong>LinkedIn:</strong> <a
+                href="https://www.linkedin.com/in/andrea-serrano-807b05324/">clicca qui</a></p>
           </div>
         </div>
       </div>
@@ -67,8 +68,10 @@
 
     <h2>Altri progetti</h2>
     <div class="grid" style="margin-top:10px">
-      <article class="card fullwidth-card">
-        <h3 class="project-title">CardMaster - Progetto Agile Development</h3>
+
+
+      <article class="card">
+        <h3 class="project-title">CardMaster - Web app in Agile Development</h3>
         <p class="muted">
           Web app per gestire, cercare e scambiare carte da gioco, con funzionalità di gestione collezioni, deck e
           desideri, sviluppata con GWT, Maven e testata con JUnit.
@@ -86,9 +89,8 @@
         <!-- Carosello sotto i tag -->
         <div class="carousel-wrapper">
           <button id="prev" class="carousel-btn">&lt;</button>
-
-          <div class="carousel-window"> <!-- Finestra visibile -->
-            <div class="carousel"> <!-- Tutte le immagini -->
+          <div class="carousel-window">
+            <div class="carousel">
               <img src="res/img/cardmaster/0.jpg" alt="CardMaster Screenshot 0" class="carousel-thumb"
                 onclick="showImage(this)">
               <img src="res/img/cardmaster/1.jpg" alt="CardMaster Screenshot 1" class="carousel-thumb"
@@ -132,6 +134,7 @@
             </div>
           </div>
 
+
           <button id="next" class="carousel-btn">&gt;</button>
         </div>
 
@@ -139,59 +142,60 @@
           rel="noopener">Repo</a>
       </article>
 
+      <article class="card">
+        <h3 class="project-title">P.E.D.R.O. - App android per monitoraggio attività</h3>
+        <p class="muted">App nativa android per il monitoraggio di attività con collegamento
+          al servizio Health Connect di Google.</p>
+        <div class="tags">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Jetpack Compose</span>
+          <span class="tag">Android</span>
+          <span class="tag">Android Studio</span>
+        </div>
+        <a class="cta" href="https://github.com/Samoggino/PEDRO" target="_blank"
+          rel="noopener">Repo</a>
+      </article>
+
+      <article class="card">
+        <div class="project-img" style="background-image: url('img/asnwerhub.png');"></div>
+        <h3 class="project-title">AnswerHUB - Sviluppo database relazionale + web app</h3>
+        <p class="muted">Web app ispirata a Google Form di cui ho
+          sviluppato sia back-end (progettazione e realizzazione del database) che front-end (realizzazione del sito
+          web).</p>
+        <div class="tags">
+          <span class="tag">PHP</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">CSS</span>
+        </div>
+        <a class="cta" href="https://github.com/serranoandre/AnswerHUB_progettoDB" target="_blank"
+          rel="noopener">Repo</a>
+      </article>
+
     </div>
-    </article>
+
 
     <!-- Lightbox per ingrandire le immagini -->
-    <div id="lightbox" onclick="this.style.display='none'">
+    <div id="lightbox">
+      <span id="lightbox-close">&times;</span>
+      <span id="lightbox-prev" class="lightbox-arrow">&#10094;</span>
       <img id="lightbox-img" src="" alt="Immagine ingrandita">
+      <span id="lightbox-next" class="lightbox-arrow">&#10095;</span>
     </div>
-    <article class="card">
-      <div class="project-img" style="background-image: url('img/asnwerhub.png');"></div>
-      <h3 class="project-title">AnswerHUB - Progetto Database</h3>
-      <p class="muted">Web app ispirata a Google Form di cui ho
-        sviluppato sia back-end (progettazione e realizzazione del database) che front-end (realizzazione del sito
-        web).</p>
-      <div class="tags">
-        <span class="tag">PHP</span>
-        <span class="tag">MySQL</span>
-        <span class="tag">MongoDB</span>
-        <span class="tag">CSS</span>
+
+
+    <section id="about" style="margin-top:18px">
+      <h2>About</h2>
+      <div class="card" style="margin-top:10px">
+        <p class="muted">Sono Andrea, laureato in Informatica. Qui trovi i miei progetti open-source, esperimenti e
+          piccoli demo.</p>
       </div>
-      <a class="cta" href="https://github.com/serranoandre/AnswerHUB_progettoDB" target="_blank" rel="noopener">Repo</a>
-    </article>
+    </section>
 
-    <article class="card">
-      <h3 class="project-title">CardMaster - Progetto Agile Development</h3>
-      <p class="muted">Web app per gestire, cercare e scambiare carte da gioco, con funzionalità di gestione
-        collezioni, deck e desideri, sviluppata con GWT, Maven e testata con JUnit.</p>
-      <div class="tags">
-        <span class="tag">Java</span>
-        <span class="tag">CSS</span>
-        <span class="tag">HTML</span>
-        <span class="tag">Maven</span>
-        <span class="tag">GWT</span>
-        <span class="tag">JUnit</span>
-        <span class="tag">Agile</span>
-      </div>
-      <a class="cta" href="https://github.com/serranoandre/CardMaster_progettoSWENG" target="_blank"
-        rel="noopener">Repo</a>
-    </article>
-  </div>
-  </section>
-
-  <section id="about" style="margin-top:18px">
-    <h2>About</h2>
-    <div class="card" style="margin-top:10px">
-      <p class="muted">Sono Andrea, laureato in Informatica. Qui trovi i miei progetti open-source, esperimenti e
-        piccoli demo. Il sito è statico: modifica <code>index.html</code> e push per aggiornare.</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© <span id="year"></span> Andrea Serrano — <a href="https://github.com/serranoandre" target="_blank"
-        rel="noopener">github.com/serranoandre</a></p>
-  </footer>
+    <footer>
+      <p>© <span id="year"></span> Andrea Serrano — <a href="https://github.com/serranoandre" target="_blank"
+          rel="noopener">github.com/serranoandre</a></p>
+    </footer>
   </div>
 
   <script src="script.js"></script>

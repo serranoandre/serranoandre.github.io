@@ -1,18 +1,18 @@
 :root {
-  --bg: #dceae4;
-  --card: #f1f1f1;
-
-  --text: #1f2933;
-  --muted: #4e535d;
-
-  --accent: #0e986a;     /* verde smeraldo */
-  --accent-alt: #31b988; /* verde acqua */
-
-  --shadow: rgba(0, 0, 0, 0.08);
-  --shadow-hover: rgba(0, 0, 0, 0.15);
-
-  --tag-bg: rgba(0, 0, 0, 0.05);
-  --tag-bg-hover: rgba(0, 0, 0, 0.1);
+  --bg: #0a0f1c;         /* blu notte molto scuro */
+  --card: #111827;       /* grigio/blu scuro */
+  
+  --text: #e0e8ff;       /* azzurro chiarissimo */
+  --muted: #94a3b8;      /* grigio freddo */
+  
+  --accent: #00a18c;     /* verde acqua neon */
+  --accent-alt: #0095c6; /* azzurro neon */
+  
+  --shadow: rgba(0, 0, 0, 0.5);
+  --shadow-hover: rgba(0, 0, 0, 0.7);
+  
+  --tag-bg: rgba(0, 245, 212, 0.15);
+  --tag-bg-hover: rgba(0, 245, 212, 0.3);
 }
 
 * {
@@ -38,6 +38,15 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none; /* rimuove la sottolineatura */
+}
+
+a:hover {
+  color: var(--accent-alt);
 }
 
 .brand {
@@ -112,7 +121,7 @@ nav a:hover::after {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  margin-top: 18px;
+  row-gap: 16px;
 }
 
 @media (max-width: 720px) {
@@ -127,10 +136,12 @@ nav a:hover::after {
   border-radius: 10px;
   box-shadow: 0 6px 18px var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
+  /* transform: translateY(-6px) scale(1.02);*/
   box-shadow: 0 10px 24px var(--shadow-hover);
 }
 
@@ -169,18 +180,20 @@ nav a:hover::after {
   padding: 8px 12px;
   border-radius: 8px;
   background: linear-gradient(90deg, var(--accent), var(--accent-alt));
-  color: #fff;
+  color: var(--text); /* colore di base del testo */
   text-decoration: none;
   font-weight: 600;
-  transition: background-position 0.4s ease, transform 0.2s ease;
+  transition: color 0.3s ease, transform 0.2s ease, background-position 0.4s ease;
   background-size: 200% 100%;
   background-position: left;
 }
 
 .cta:hover {
-  background-position: right;
+  color: #ffffff; /* testo diventa bianco */
   transform: translateY(-2px);
+  background-position: right; /* mantiene il tuo effetto gradiente animato */
 }
+
 
 footer {
   margin-top: 28px;
@@ -195,11 +208,6 @@ footer {
   align-items: center;
 }
 
-.fullwidth-card {
-  width: 100%;
-  margin-bottom: 30px;
-}
-
 .card-content {
   display: flex;
   gap: 20px;
@@ -210,25 +218,28 @@ footer {
 }
 
 .carousel-wrapper {
+  padding-top: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 100%;
 }
 
 .carousel-window {
   overflow: hidden;
-  flex: 1;               /* prende lo spazio disponibile */
+  width: 100%; /* evita che superi la larghezza della card */
 }
+
 
 .carousel {
   display: flex;
   padding: 15px;
   gap: 15px;
-  transition: transform 0.4s ease; /* animazione scorrimento */
+  transition: transform 0.4s ease;
 }
 
 .carousel-thumb {
-  width: 200px;           /* dimensione di ogni immagine */
+  width: 220px;           /* dimensione di ogni immagine */
   cursor: pointer;
   border-radius: 6px;
   transition: transform 0.2s;
@@ -298,5 +309,30 @@ footer {
 }
 
 #lightbox-close:hover {
+  color: var(--accent-alt);
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+  padding: 10px;
+  z-index: 1001;
+  transition: color 0.2s ease;
+}
+
+#lightbox-prev {
+  left: 20px;
+}
+
+#lightbox-next {
+  right: 20px;
+}
+
+.lightbox-arrow:hover {
   color: var(--accent-alt);
 }
