@@ -239,7 +239,8 @@ footer {
 }
 
 .carousel-thumb {
-  width: 220px;           /* dimensione di ogni immagine */
+  width: 220px;
+  height: 130px;
   cursor: pointer;
   border-radius: 6px;
   transition: transform 0.2s;
