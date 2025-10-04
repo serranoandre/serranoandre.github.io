@@ -29,11 +29,24 @@ body {
 
 .container {
   max-width: 1200px;
-  margin: 48px auto;
+  margin: 0px auto;
   padding: 20px;
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100; /* sopra il contenuto */
+  background-color: var(--bg); /* per non vedere trasparenze sullo scroll */
+  padding: 12px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4); /* optional, per staccarlo dal contenuto */
+}
+
+/* contenuto interno limitato e centrato */
+header .header-inner {
+  max-width: 1200px;         /* massimo della larghezza */
+  margin: 0 auto;            /* centra orizzontalmente */
+  padding: 20px;           /* padding interno */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -374,3 +387,40 @@ footer {
   border-color: var(--accent);
 }
 
+/* Selettore di lingua */
+#lang-switcher {
+  margin-left: 16px;
+  padding: 6px 32px 6px 12px; /* top/destra/bottom/sinistra */
+  border-radius: 8px;
+  background-color: var(--card);
+  color: var(--text);
+  border: 2px solid var(--accent);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23e0e8ff" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+
+#lang-switcher:hover {
+  border-color: var(--accent-alt);
+  color: var(--accent-alt);
+}
+
+#lang-switcher:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+/* Opzioni interne */
+#lang-switcher option {
+  background-color: var(--card);
+  color: var(--text);
+}

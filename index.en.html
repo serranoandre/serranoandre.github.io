@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Andrea Serrano — Portfolio</title>
+  <meta name="description" content="Portfolio of Andrea Serrano — projects, GitHub links and contacts." />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="avatar">AS</div>
+        <div>
+          <h1>Andrea Serrano</h1>
+          <p class="lead">Sowftare engineer — personal portfolio of personal and uni projects</p>
+        </div>
+      </div>
+      <nav class="topbar">
+        <a href="#projects" data-key="nav-projects">Projects</a>
+        <a href="#about" data-key="nav-about">About</a>
+        <a href="https://github.com/serranoandre" target="_blank" rel="noopener" data-key="nav-github">GitHub</a>
+        <select id="lang-switcher">
+          <option value="it">🇮🇹 IT</option>
+          <option value="en" selected>🇬🇧 EN</option>
+        </select>
+      </nav>
+  </header>
+  </div>
+  <div class="container">
+
+    <section class="hero card" aria-label="intro">
+      <p class="muted">Hi! — here you can find my projects, short descriptions and useful links.</p>
+      <div class="grid">
+        <div>
+          <h3 style="margin-top:12px">Featured</h3>
+          <div class="card" style="margin-top:10px">
+            <h4 class="project-title">A.R.I.S. — TTS System</h4>
+            <p class="muted">"Advanced Reasoning & Interaction System" is an offline quantized TTS model that can
+              pronounce sentences with a natural voice.
+              Demo, instructions and further info available in the repository.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">TTS</span>
+            </div>
+            <a class="cta" href="https://github.com/serranoandre/progetto-a" target="_blank" rel="noopener">Go to
+              repository</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="margin-top:12px">Contacts</h3>
+          <div class="card" style="margin-top:10px">
+            <p class="muted">Check out my GitHub to see the code. You can also reach me via email or connect on
+              LinkedIn!</p>
+            <p style="margin:8px 0 0"><strong>Email:</strong> <a
+                href="mailto:serranoand@libero.it">serranoand@libero.it</a></p>
+            <p style="margin:6px 0 0"><strong>LinkedIn:</strong> <a
+                href="https://www.linkedin.com/in/andrea-serrano-807b05324/">click here</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid" style="margin-top:10px">
+
+        <article class="card">
+          <h3 class="project-title">CardMaster - Web app in Agile Development</h3>
+          <p class="muted">
+            Multi-user web app to manage, search and trade game cards with other players, featuring collection,
+            deck and wishlist management. Developed with GWT, Maven and tested with JUnit.
+          </p>
+          <div class="tags">
+            <span class="tag">Uni</span>
+            <span class="tag">Java</span>
+            <span class="tag">CSS</span>
+            <span class="tag">HTML</span>
+            <span class="tag">Maven</span>
+            <span class="tag">GWT</span>
+            <span class="tag">JUnit</span>
+            <span class="tag">Agile</span>
+          </div>
+
+          <!-- Carousel below the tags -->
+          <!-- (lasciato identico) -->
+          <div class="carousel-wrapper">
+            <button id="prev" class="carousel-btn">&lt;</button>
+            <div class="carousel-window">
+              <div class="carousel">
+                <!-- immagini rimangono uguali -->
+                <img src="res/img/cardmaster/0.jpg" alt="CardMaster Screenshot 0" class="carousel-thumb"
+                  onclick="showImage(this)">
+                <!-- ... tutte le altre immagini ... -->
+              </div>
+            </div>
+            <button id="next" class="carousel-btn">&gt;</button>
+          </div>
+
+          <a class="cta" href="https://github.com/serranoandre/CardMaster_progettoSWENG" target="_blank"
+            rel="noopener">Repo</a>
+        </article>
+
+        <article class="card">
+          <h3 class="project-title">P.E.D.R.O. - Android app for activity tracking</h3>
+          <p class="muted">"Personal Exercise Data Recording Organizer" is a native Android app for activity tracking,
+            integrated with Google’s Health Connect service.</br>
+            Designed in collaboration with <a href="https://github.com/Samoggino" target="_blank"
+              rel="noopener">Samoggino</a>.</p>
+          <div class="tags">
+            <span class="tag">Uni</span>
+            <span class="tag">Kotlin</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">Android</span>
+            <span class="tag">Android Studio</span>
+          </div>
+
+          <!-- Carousel identical -->
+          <div class="carousel-wrapper">
+            <button id="prev" class="carousel-btn">&lt;</button>
+            <div class="carousel-window">
+              <div class="carousel">
+                <!-- immagini rimangono uguali -->
+                <img src="res/img/pedro/0.png" alt="Pedro Screenshot 0" class="carousel-thumb"
+                  onclick="showImage(this)">
+                <!-- ... tutte le altre immagini ... -->
+              </div>
+            </div><button id="next" class="carousel-btn">&gt;</button>
+          </div>
+
+          <a class="cta" href="https://github.com/Samoggino/PEDRO" target="_blank" rel="noopener">Repo</a>
+        </article>
+
+        <article class="card">
+          <div class="project-img" style="background-image: url('img/asnwerhub.png');"></div>
+          <h3 class="project-title">AnswerHUB - Relational database + web app</h3>
+          <p class="muted">Web app inspired by Google Forms, where I developed both the back-end (database design and
+            implementation) and the front-end (website implementation).</p>
+          <div class="tags">
+            <span class="tag">Uni</span>
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">CSS</span>
+          </div>
+
+          <!-- Carousel identical -->
+          <div class="carousel-wrapper">
+            <button id="prev" class="carousel-btn">&lt;</button>
+            <div class="carousel-window">
+              <div class="carousel">
+                <img src="res/img/answerhub/0.png" alt="AnswerHub Screenshot 0" class="carousel-thumb"
+                  onclick="showImage(this)">
+                <!-- ... altre immagini ... -->
+              </div>
+            </div><button id="next" class="carousel-btn">&gt;</button>
+          </div>
+
+          <a class="cta" href="https://github.com/serranoandre/AnswerHUB_progettoDB" target="_blank"
+            rel="noopener">Repo</a>
+        </article>
+
+      </div>
+
+      <!-- Lightbox identical -->
+      <div id="lightbox">
+        <span id="lightbox-close">&times;</span>
+        <span id="lightbox-prev" class="lightbox-arrow">&#10094;</span>
+
+        <div class="lightbox-content">
+          <img id="lightbox-img" src="" alt="Enlarged image">
+          <div id="lightbox-thumbnails" class="lightbox-thumbnails"></div>
+        </div>
+
+        <span id="lightbox-next" class="lightbox-arrow">&#10095;</span>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:18px">
+      <h2>About</h2>
+      <div class="card" style="margin-top:10px">
+        <p class="muted">I’m Andrea, Computer Science graduate. Here you can find my open-source projects, experiments
+          and small demos.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Andrea Serrano — <a href="https://github.com/serranoandre" target="_blank"
+          rel="noopener">github.com/serranoandre</a></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

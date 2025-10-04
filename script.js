@@ -93,7 +93,7 @@ document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
   const images = carousel.querySelectorAll('.carousel-thumb');
   const prevBtn = wrapper.querySelector('.carousel-btn:first-of-type');
   const nextBtn = wrapper.querySelector('.carousel-btn:last-of-type');
-  
+
   let index = 0;
   const visible = 2; // immagini visibili
 
@@ -126,4 +126,16 @@ document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
   images.forEach(img => {
     img.addEventListener('click', () => showImage(img));
   });
+});
+
+const langSwitcher = document.getElementById("lang-switcher");
+
+langSwitcher.addEventListener("change", function () {
+  const selectedLang = this.value;
+
+  if (selectedLang === "it") {
+    window.location.href = "index.it.html";
+  } else if (selectedLang === "en") {
+    window.location.href = "index.en.html";
+  }
 });
